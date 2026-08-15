@@ -1,40 +1,37 @@
 name: Build APK
 
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.9'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-    - name: Install Dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y python3-pip build-essential libpython3.9-dev
-        pip install --upgrade pip
-        pip install buildozer cython
-        sudo apt-get install -y git zip unzip openjdk-17-jdk
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install buildozer cython
 
-    - name: Initialize Buildozer
-      run: |
-        # Ensure buildozer.spec is present
-        touch buildozer.spec
-        echo "android.api = 33" >> buildozer.spec
-        echo "android.minapi = 21" >> buildozer.spec
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential git python3-dev ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf libgstreamer1.0-dev \
+          libgstreamer-plugins-base1.0-dev libglew-dev zlib1g-dev libjpeg8-dev libboost-all-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf \
+          libportmidi-dev libfreetype6-dev libgl1-mesa-glx libgl1-mesa-dev libgles2-mesa-dev libegl1-mesa-dev libsqlite3-dev libffi-dev liblzma-dev
 
-    - name: Build APK
-      run: |
-        buildozer android debug
+      - name: Build APK
+        run: |
+          buildozer android debug
 
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: Rmad-APK
-        path: bin/*.apk
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4  # <--- تم التعديل هنا إلى v4
+        with:
+          name: Rmad-App
+          path: bin/*.apk
