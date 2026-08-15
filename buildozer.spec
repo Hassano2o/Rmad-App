@@ -1,9 +1,10 @@
+cat > buildozer.spec << 'EOF'
 [app]
 title = Rmad
 package.name = rmad
 package.domain = org.h1x1o
 source.dir = .
-source.include_exts = py,txt,jpg,png
+source.include_exts = py,txt
 version = 1.0
 requirements = python3,kivy,jnius
 android.api = 33
@@ -11,52 +12,6 @@ android.minapi = 21
 p4a.bootstrap = sdl2
 orientation = sensor
 fullscreen = 0
-windowfloaty = 0
-windowfullscreen = 0
-windowborderless = 0
-windowtitle = Rmad
-windowicon = default.png
-android.permissions = INTERNET,WIFI_STATE,WIFI_ACCESS,FINE_LOCATION
-android.entrypoint = org.kivy.android.PythonActivity
-android.theme = @android:style/Theme.NoTitleBar
-android.targetSdkVersion = 33
-android.ndk_version = 23b
-android.gradle_version = 7.4.2
-android.gradle_compile_sdk_version = 33
-android.build_tools_version = 33.0.0
-android.sdk_path = /home/toor/.buildozer/android/platform/android-sdk
-android.ndk_path = /home/toor/.buildozer/android/platform/android-ndk-r25b
-android.sdk_download_url = https://dl.google.com/android/repository/platform-tools-latest.zip
-android.ndk_download_url = https://dl.google.com/android/repository/android-ndk-r25b-linux.zip
-android.sdk_install_path = /home/toor/.buildozer/android/platform/android-sdk
-android.ndk_install_path = /home/toor/.buildozer/android/platform/android-ndk-r25b
-android.permissions = INTERNET,WIFI_STATE,WIFI_ACCESS,FINE_LOCATION
-android.entrypoint = org.kivy.android.PythonActivity
-android.theme = @android:style/Theme.NoTitleBar
-android.targetSdkVersion = 33
-android.gradle_version = 7.4.2
-android.gradle_compile_sdk_version = 33
-android.build_tools_version = 33.0.0
-android.sdk_path = /home/toor/.buildozer/android/platform/android-sdk
-android.ndk_path = /home/toor/.buildozer/android/platform/android-ndk-r25b
-android.sdk_download_url = https://dl.google.com/android/repository/platform-tools-latest.zip
-android.ndk_download_url = https://dl.google.com/android/repository/android-ndk-r25b-linux.zip
-android.sdk_install_path = /home/toor/.buildozer/android/platform/android-sdk
-android.ndk_install_path = /home/toor/.buildozer/android/platform/android-ndk-r25b
-android.permissions = INTERNET,WIFI_STATE,WIFI_ACCESS,FINE_LOCATION
-android.entrypoint = org.kivy.android.PythonActivity
-android.theme = @android:style/Theme.NoTitleBar
-android.targetSdkVersion = 33
-android.gradle_version = 7.4.2
-android.gradle_compile_sdk_version = 33
-android.build_tools_version = 33.0.0
-android.sdk_path = /home/toor/.buildozer/android/platform/android-sdk
-android.ndk_path = /home/toor/.buildozer/android/platform/android-ndk-r25b
-android.sdk_download_url = https://dl.google.com/android/repository/platform-tools-latest.zip
-android.ndk_download_url = https://dl.google.com/android/repository/android-ndk-r25b-linux.zip
-android.sdk_install_path = /home/toor/.buildozer/android/platform/android-sdk
-android.ndk_install_path = /home/toor/.buildozer/android/platform/android-ndk-r25b
-
-[buildozer]
 log_level = 2
 warn_on_root = 1
+EOF
