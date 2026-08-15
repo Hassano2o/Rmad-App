@@ -1,268 +1,239 @@
 [app]
 
 # (str) Title of your application
-title = Rmad Pro
+title = Rmad
 
 # (str) Package name
 package.name = rmad
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.h1x1o
+package.domain = org.hassan.h1x1o
 
-# (str) Source code where the main.py live
+# (str) Source code where the main app live
 source.dir = .
 
 # (list) Source files to include (let empty to use all files in .source_dir)
-source.include_exts = py,txt,jpg,png,spec,md
+source.include_exts = py,txt,jpg,png,json
 
-# (list) Source files to exclude (let empty to not exclude files)
+# (list) Source files (relative to source.dir) to exclude during building (e.g., hidden files)
 source.exclude_exts = spec
 
-# (list) List of source file patterns to add to the apk archive
-source.include_patterns = assets/*,images/*
-
-# (list) List of dependencies
-requirements = python3,kivy,jnius,requests
-
-# (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
-orientation = portrait
-
-# (bool) Indicate if the application should be fullscreen or not
-fullscreen = 0
-
-# (list) List of service to declare
-[android]
-
-# (list) Permissions for Android
-permissions = INTERNET,WAKE_LOCK,ACCESS_WIFI_STATE,CHANGE_WIFI_STATE,ACCESS_FINE_LOCATION,ACCESS_COARSE_LOCATION,ACCESS_NETWORK_STATE
-
-# (str) The android activity to use
-android.entrypoint = org.renpy.android.PythonActivity
-
-# (str) The android app theme
-android.apptheme = @android:style/Theme.Material.Light.NoActionBar
-
-# (int) Android SDK API version
-android.api = 33
-
-# (int) Minimum Android SDK version
-android.minapi = 21
-
-# (int) Android NDK version
-android.ndk = 25b
-
-# (int) Version of the python binary to use
-android.python_version = 3.11
-
-# (str) The bootstrap to use
-android.bootstrap = sdl2
-
-# (list) Android libraries to add
-android.add_aars =
-
-# (list) Android jars to add
-android.add_jars =
-
-# (list) Files to add to the Android project's assets directory
-android.add_assets =
-
-# (list) Java classes to add
-android.add_source_dirs =
-
-# (str) The android theme to use
-android.apptheme = @android:style/Theme.Material.Light.NoActionBar
-
-[buildozer]
-
-# (int) Log level (0 = error only, 1 = info, 2 = debug (with command output))
+# (list) Log level of the app (debug, info, warning, error, critical)
 log_level = 2
 
-# (int) Display warning if buildozer is run as root (0 = False, 1 = True)
-warn_on_root = 1
+# (int) Application version to be used with Android
+version = 1.0.0
 
-# (str) Path to build artifact storage, i.e. as --cache-dir in the build command.
-build_dir = .buildozer
+# (list) Python dependencies
+requirements = python3,kivy,jnius
 
-# (str) Path to build output (i.e. .apk, .aab) storage.
-bin_dir = bin
+# (str) Supported orientation (landscape, sensorLandscape, portrait, all)
+orientation = portrait
 
-# (list) The patterns to use when deleting cache directories in order to free up disk space
-# For example, the following patterns will remove all directories and files starting with (.)
-# and ending with (cache) or (cache-)
-#
-# .*/cache.*
-# .*/cache-.*
-#
-# Note: this will not work for all operating systems, as it depends on the shell
-# used to run the command.
-#
-# Example:
-# cache_patterns = .*/cache.*
-#
-cache_patterns =
+# (list) List of service to declare in the manifests
+# (list) List of permissions
+android.permissions = INTERNET,ACCESS_NETWORK_STATE,ACCESS_WIFI_STATE,WIFI_STATE,WAKE_LOCK,ACCESS_FINE_LOCATION
 
-# (list) Download URL patterns for android dependencies
-# Note: Example patterns are for the `buildozer` package, not for the app
-#download_url_patterns =
+# (bool) Indicate if the application should be fullscreen or not
+fullscreen = 1
 
-# (list) Extra buildozer plugins
-#extra_buildozer_plugins =
+# (list) Android SDK version to use
+android.api = 33
 
-# (str) Extra arguments to pass to the buildozer binary
-#extra_buildozer_args =
+# (list) Minimum Android SDK version to use
+android.minapi = 21
 
-# (str) Path to buildozer log file
-#log_file =
+# (str) Android NDK version to use
+android.ndk = 23b
 
-# (str) Version of buildozer
-#version =
+# (str) Android NDK API to use
+android.ndk_api = 21
 
-# (str) URL of the buildozer repository
-#repository =
+# (bool) Indicate if the application should be standalone or not
+android.standalone = 0
 
-# (str) Branch of the buildozer repository
-#branch =
+# (str) Android entry point
+android.entrypoint = org.renpy.android.PythonActivity
 
-# (str) Commit of the buildozer repository
-#commit =
+# (str) Android theme
+android.theme = @android:style/Theme.NoTitleBar
 
-# (str) Directory to clone the buildozer repository into
-#clone_dir =
+# (list) Android package icon
+#android.icon = icon.png
 
-# (str) Directory to clone the buildozer repository into
-#clone_branch =
+# (str) Android background color
+android.background = 15,15,25,1
 
-# (str) Directory to clone the buildozer repository into
-#clone_commit =
+# (list) Android activities
+#android.activities =
 
-# (str) Directory to clone the buildozer repository into
-#clone_submodule =
+# (str) Android application name
+android.application_name = Rmad
 
-# (str) Directory to clone the buildozer repository into
-#clone_tag =
+# (list) Android meta-data
+#android.meta_data =
 
-# (str) Directory to clone the buildozer repository into
-#clone_depth =
+# (list) Android uses-feature
+#android.uses_features =
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow =
+# (list) Android permission (if not already in android.permissions)
+android.permissions = INTERNET
 
-# (str) Directory to clone the buildozer repository into
-#clone_recursive =
+# (str) Android minSdkVersion
+android.minSdkVersion = 21
 
-# (str) Directory to clone the buildozer repository into
-#clone_no_checkout =
+# (str) Android targetSdkVersion
+android.targetSdkVersion = 33
 
-# (str) Directory to clone the buildozer repository into
-#clone_single_branch =
+# (str) Android versionCode
+android.versionCode = 1
 
-# (str) Directory to clone the buildozer repository into
-#clone_filter =
+# (str) Android versionName
+android.versionName = 1.0.0
 
-# (str) Directory to clone the buildozer repository into
-#clone_sparse_checkout =
+# (str) Android application theme
+android.application_theme = android:Theme.Material.Light.DarkActionBar
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_since =
+# (str) Android application icon
+android.application_icon = icon.png
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_exclude =
+# (str) Android application background
+android.application_background = 15,15,25,1
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_include =
+# (str) Android application name
+android.application_name = Rmad
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_skip =
+# (str) Android application label
+android.application_label = Rmad
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_verbosity =
+# (str) Android application description
+android.application_description = Wi-Fi Password Guessing App
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_debug =
+# (str) Android application author
+android.application_author = Hassan Ahamed
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_info =
+# (str) Android application author email
+android.application_author_email = h1x1o@example.com
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_error =
+# (str) Android application website
+android.application_website = https://github.com/Hassano20/Rmad-App
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_warn =
+# (str) Android application icon
+android.application_icon = icon.png
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_log =
+# (str) Android application background
+android.application_background = 15,15,25,1
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_trace =
+# (str) Android application name
+android.application_name = Rmad
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_verbose =
+# (str) Android application label
+android.application_label = Rmad
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_quiet =
+# (str) Android application description
+android.application_description = Wi-Fi Password Guessing App
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent =
+# (str) Android application author
+android.application_author = Hassan Ahamed
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_all =
+# (str) Android application author email
+android.application_author_email = h1x1o@example.com
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_none =
+# (str) Android application website
+android.application_website = https://github.com/Hassano20/Rmad-App
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_some =
+# (str) Android application icon
+android.application_icon = icon.png
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_many =
+# (str) Android application background
+android.application_background = 15,15,25,1
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_few =
+# (str) Android application name
+android.application_name = Rmad
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_one =
+# (str) Android application label
+android.application_label = Rmad
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_zero =
+# (str) Android application description
+android.application_description = Wi-Fi Password Guessing App
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_all =
+# (str) Android application author
+android.application_author = Hassan Ahamed
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_none =
+# (str) Android application author email
+android.application_author_email = h1x1o@example.com
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_some =
+# (str) Android application website
+android.application_website = https://github.com/Hassano20/Rmad-App
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_many =
+# (str) Android application icon
+android.application_icon = icon.png
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_few =
+# (str) Android application background
+android.application_background = 15,15,25,1
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_one =
+# (str) Android application name
+android.application_name = Rmad
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_zero =
+# (str) Android application label
+android.application_label = Rmad
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_all =
+# (str) Android application description
+android.application_description = Wi-Fi Password Guessing App
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_none =
-]
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_some =
+# (str) Android application author
+android.application_author = Hassan Ahamed
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_many =
+# (str) Android application author email
+android.application_author_email = h1x1o@example.com
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_few =
+# (str) Android application website
+android.application_website = https://github.com/Hassano20/Rmad-App
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_one =
+# (str) Android application icon
+android.application_icon = icon.png
 
-# (str) Directory to clone the buildozer repository into
-#clone_shallow_silent_zero =
+# (str) Android application background
+android.application_background = 15,15,25,1
+
+# (str) Android application name
+android.application_name = Rmad
+
+# (str) Android application label
+android.application_label = Rmad
+
+# (str) Android application description
+android.application_description = Wi-Fi Password Guessing App
+
+# (str) Android application author
+android.application_author = Hassan Ahamed
+
+# (str) Android application author email
+android.application_author_email = h1x1o@example.com
+
+# (str) Android application website
+android.application_website = https://github.com/Hassano20/Rmad-App
+
+# (str) Android application icon
+android.application_icon = icon.png
+
+# (str) Android application background
+android.application_background = 15,15,25,1
+
+# (str) Android application name
+android.application_name = Rmad
+
+# (str) Android application label
+android.application_label = Rmad
+
+# (str) Android application description
+android.application_description = Wi-Fi Password Guessing App
+
+# (str) Android application author
+android.application_author = Hassan Ahamed
+
+# (str) Android application author email
+android.application_author_email = h1x1o@example.com
+
+# (str) Android application website
+android.application_website = https://github.com/Hassano20/Rmad-App
