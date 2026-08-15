@@ -8,7 +8,8 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04 # استخدمنا 22.04 لأنها أكثر استقراراً مع Buildozer حالياً
+    # ✅ هذا هو الحل: تحديد البيئة الإصدارات القديمة المستقرة
+    runs-on: ubuntu-22.04 
     strategy:
       matrix:
         python-version: ['3.10']
@@ -42,10 +43,11 @@ jobs:
         if [ ! -f buildozer.spec ]; then
             buildozer init
         fi
-        # تأكد من الإعدادات الأساسية
+        # تحديث الإعدادات الأساسية لضمان عمل التطبيق
         sed -i 's/android.api = .*/android.api = 33/' buildozer.spec
         sed -i 's/android.minapi = .*/android.minapi = 21/' buildozer.spec
         sed -i 's/title = .*/title = Rmad/' buildozer.spec
+        # تأكد من تضمين ملفات اللغة والملفات الإضافية
         sed -i 's/source.include_exts = .*/source.include_exts = py,txt,jpg,png/' buildozer.spec
 
     - name: Build APK
