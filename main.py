@@ -1,4 +1,3 @@
-cat > main.py << 'EOF'
 import kivy
 kivy.require('2.2.1')
 
@@ -341,4 +340,3 @@ class RmadApp(App):
 
 if __name__ == '__main__':
     RmadApp().run()
-EOF
