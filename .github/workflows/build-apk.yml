@@ -1,37 +1,61 @@
-name: Build APK
+name: Build Rmad APK
 
-on: [push, workflow_dispatch]
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch: # يسهل تشغيله يدوياً
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10'] # استخدم 3.10 لضمان توافق أحدث Kivy
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v4  # أحدث نسخة
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5 # أحدث نسخة
+      with:
+        python-version: ${{ matrix.python-version }}
 
-      - name: Install Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install buildozer cython
+    - name: Install System Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y git zip unzip openjdk-17-jdk
+        sudo apt-get install -y python3-pip build-essential libpython3.10-dev
+        # مكتبات Kivy الأساسية
+        sudo apt-get install -y \
+          libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf \
+          libportmidi-dev libfreetype6-dev libglew2.2 libglew-dev \
+          libjpeg-dev libtiff-dev libgstreamer1.0-dev
 
-      - name: Install System Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential git python3-dev ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf libgstreamer1.0-dev \
-          libgstreamer-plugins-base1.0-dev libglew-dev zlib1g-dev libjpeg8-dev libboost-all-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf \
-          libportmidi-dev libfreetype6-dev libgl1-mesa-glx libgl1-mesa-dev libgles2-mesa-dev libegl1-mesa-dev libsqlite3-dev libffi-dev liblzma-dev
+    - name: Install Python Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install buildozer cython
 
-      - name: Build APK
-        run: |
-          buildozer android debug
+    - name: Initialize Buildozer
+      run: |
+        # إذا لم يوجد ملف الإعداد، قم بإنشائه
+        if [ ! -f buildozer.spec ]; then
+            buildozer init
+        fi
+        # تأكد من الإعدادات
+        echo "android.api = 33" >> buildozer.spec
+        echo "android.minapi = 21" >> buildozer.spec
+        echo "title = Rmad" >> buildozer.spec
+        echo "source.include_exts = py,txt,jpg,png" >> buildozer.spec
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4  # <--- تم التعديل هنا إلى v4
-        with:
-          name: Rmad-App
-          path: bin/*.apk
+    - name: Build APK
+      run: |
+        buildozer android debug
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4 # أحدث نسخة
+      with:
+        name: Rmad-APK
+        path: bin/*.apk
