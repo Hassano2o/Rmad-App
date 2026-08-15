@@ -7,233 +7,5320 @@ title = Rmad
 package.name = rmad
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.hassan.h1x1o
+package.domain = org.h1x1o
 
 # (str) Source code where the main app live
 source.dir = .
 
-# (list) Source files to include (let empty to use all files in .source_dir)
-source.include_exts = py,txt,jpg,png,json
+# (list) Source files to include (let empty to use all files in .)
+source.include_exts = py,txt,jpg,png
 
-# (list) Source files (relative to source.dir) to exclude during building (e.g., hidden files)
-source.exclude_exts = spec
+# (list) Source files to exclude (let empty to not exclude files)
+source.exclude_exts = logo
 
-# (list) Log level of the app (debug, info, warning, error, critical)
-log_level = 2
-
-# (int) Application version to be used with Android
-version = 1.0.0
-
-# (list) Python dependencies
+# (list) Specifications to use
 requirements = python3,kivy,jnius
 
-# (str) Supported orientation (landscape, sensorLandscape, portrait, all)
-orientation = portrait
+# (str) Custom source folders exclusive to Android
+p4a.hooks = 
 
-# (list) List of service to declare in the manifests
-# (list) List of permissions
-android.permissions = INTERNET,ACCESS_NETWORK_STATE,ACCESS_WIFI_STATE,WIFI_STATE,WAKE_LOCK,ACCESS_FINE_LOCATION
+# (str) Custom hooks directory
+p4a.directory = 
 
-# (bool) Indicate if the application should be fullscreen or not
-fullscreen = 1
+# (list) Android android-specific directories
+android.entrypoint = org.kivy.android.PythonActivity
 
-# (list) Android SDK version to use
+# (list) List of sections of your application you don't want to use in the pure module
+#p4a.purepython = 
+
+# (list) Folder where to put the APK
+android.apk = 
+
+# (list) Log level
+log_level = 2
+
+# (int) Android API version
 android.api = 33
 
-# (list) Minimum Android SDK version to use
+# (int) Minimum Android SDK version
 android.minapi = 21
 
-# (str) Android NDK version to use
-android.ndk = 23b
+# (int) Android SDK version
+android.ndk = 25b
 
-# (str) Android NDK API to use
-android.ndk_api = 21
+# (str) Android NDK directory
+android.ndk_path = 
 
-# (bool) Indicate if the application should be standalone or not
-android.standalone = 0
+# (str) Android SDK directory
+android.sdk_path = 
+
+# (str) Android platform
+android.platform = android-33
+
+# (str) Android build tools
+android.build_tools = 33.0.0
+
+# (list) Application requirements
+# comma separated e.g. requirements = sqlite3,kivy
+
+# (str) Support libraries
+#support_libs = 
+
+# (list) Application icons
+#android.icon = 
+
+# (str) Permissions
+android.permissions = INTERNET,WAKE_LOCK
+
+# (str) Application background
+android.background = 
+
+# (str) Window flags
+window.flags = fullscreen
 
 # (str) Android entry point
-android.entrypoint = org.renpy.android.PythonActivity
+android.entrypoint = org.kivy.android.PythonActivity
 
-# (str) Android theme
-android.theme = @android:style/Theme.NoTitleBar
+# (str) Python for android
+p4a.python_version = 3.11
 
-# (list) Android package icon
-#android.icon = icon.png
+# (str) Bootstrap
+p4a.bootstrap = sdl2
 
-# (str) Android background color
-android.background = 15,15,25,1
+# (bool) Indicate if the application should be depending on pygame
+#p4a.dependency = 
 
-# (list) Android activities
-#android.activities =
+# (bool) Indicate if the application should be depending on sdl2
+#p4a.dependency_sdl2 = 
 
-# (str) Android application name
-android.application_name = Rmad
+# (str) Python package to include in the APK
+#android.package.python_package = 
 
-# (list) Android meta-data
-#android.meta_data =
+# (str) Android activity
+android.activity = 
 
-# (list) Android uses-feature
-#android.uses_features =
+# (str) Android activity theme
+android.activity_theme = 
 
-# (list) Android permission (if not already in android.permissions)
-android.permissions = INTERNET
+# (str) Android activity label
+android.activity_label = 
 
-# (str) Android minSdkVersion
-android.minSdkVersion = 21
+# (str) Android activity icon
+android.activity_icon = 
 
-# (str) Android targetSdkVersion
-android.targetSdkVersion = 33
+# (str) Android activity background
+android.activity_background = 
 
-# (str) Android versionCode
-android.versionCode = 1
+# (str) Android activity status bar
+android.activity_status_bar = 
 
-# (str) Android versionName
-android.versionName = 1.0.0
+# (str) Android activity navigation bar
+android.activity_navigation_bar = 
 
-# (str) Android application theme
-android.application_theme = android:Theme.Material.Light.DarkActionBar
+# (str) Android activity navigation bar color
+android.activity_navigation_bar_color = 
 
-# (str) Android application icon
-android.application_icon = icon.png
+# (str) Android activity navigation bar icon
+android.activity_navigation_bar_icon = 
 
-# (str) Android application background
-android.application_background = 15,15,25,1
+# (str) Android activity navigation bar background
+android.activity_navigation_bar_background = 
 
-# (str) Android application name
-android.application_name = Rmad
+# (str) Android activity navigation bar text color
+android.activity_navigation_bar_text_color = 
 
-# (str) Android application label
-android.application_label = Rmad
+# (str) Android activity navigation bar icon color
+android.activity_navigation_bar_icon_color = 
 
-# (str) Android application description
-android.application_description = Wi-Fi Password Guessing App
+# (str) Android activity navigation bar background color
+android.activity_navigation_bar_background_color = 
 
-# (str) Android application author
-android.application_author = Hassan Ahamed
+# (str) Android activity navigation bar status bar color
+android.activity_navigation_bar_status_bar_color = 
 
-# (str) Android application author email
-android.application_author_email = h1x1o@example.com
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application website
-android.application_website = https://github.com/Hassano20/Rmad-App
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application icon
-android.application_icon = icon.png
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
 
-# (str) Android application background
-android.application_background = 15,15,25,1
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application name
-android.application_name = Rmad
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application label
-android.application_label = Rmad
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
 
-# (str) Android application description
-android.application_description = Wi-Fi Password Guessing App
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application author
-android.application_author = Hassan Ahamed
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application author email
-android.application_author_email = h1x1o@example.com
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
 
-# (str) Android application website
-android.application_website = https://github.com/Hassano20/Rmad-App
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application icon
-android.application_icon = icon.png
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application background
-android.application_background = 15,15,25,1
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
 
-# (str) Android application name
-android.application_name = Rmad
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application label
-android.application_label = Rmad
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application description
-android.application_description = Wi-Fi Password Guessing App
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
 
-# (str) Android application author
-android.application_author = Hassan Ahamed
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application author email
-android.application_author_email = h1x1o@example.com
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application website
-android.application_website = https://github.com/Hassano20/Rmad-App
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
 
-# (str) Android application icon
-android.application_icon = icon.png
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application background
-android.application_background = 15,15,25,1
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application name
-android.application_name = Rmad
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
 
-# (str) Android application label
-android.application_label = Rmad
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application description
-android.application_description = Wi-Fi Password Guessing App
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application author
-android.application_author = Hassan Ahamed
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
 
-# (str) Android application author email
-android.application_author_email = h1x1o@example.com
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application website
-android.application_website = https://github.com/Hassano20/Rmad-App
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application icon
-android.application_icon = icon.png
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
 
-# (str) Android application background
-android.application_background = 15,15,25,1
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application name
-android.application_name = Rmad
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application label
-android.application_label = Rmad
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
 
-# (str) Android application description
-android.application_description = Wi-Fi Password Guessing App
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application author
-android.application_author = Hassan Ahamed
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application author email
-android.application_author_email = h1x1o@example.com
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
 
-# (str) Android application website
-android.application_website = https://github.com/Hassano20/Rmad-App
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application icon
-android.application_icon = icon.png
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application background
-android.application_background = 15,15,25,1
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
 
-# (str) Android application name
-android.application_name = Rmad
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application label
-android.application_label = Rmad
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application description
-android.application_description = Wi-Fi Password Guessing App
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
 
-# (str) Android application author
-android.application_author = Hassan Ahamed
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
 
-# (str) Android application author email
-android.application_author_email = h1x1o@example.com
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
 
-# (str) Android application website
-android.application_website = https://github.com/Hassano20/Rmad-App
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar_icon_color = 
+
+# (str) Android activity navigation bar status bar background color
+android.activity_navigation_bar_status_bar_background_color = 
+
+# (str) Android activity navigation bar status bar text color
+android.activity_navigation_bar_status_bar_text_color = 
+
+# (str) Android activity navigation bar status bar icon color
+android.activity_navigation_bar_status_bar
